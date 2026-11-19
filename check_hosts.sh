@@ -1,16 +1,6 @@
 #!/bin/bash
 
-if [ $# -lt 1 ]; then
-    echo "Utilizare: $0 <fisier_hosts>"
-    exit 1
-fi
-
-FILE="$1"
-
-if [ ! -f "$FILE" ]; then
-    echo "Eroare: Fisierul '$FILE' nu exista."
-    exit 1
-fi
+FILE="$HOME/etc/hosts"
 
 while read -r ip host rest; do
     [[ -z "$ip" || "$ip" =~ ^# ]] && continue
